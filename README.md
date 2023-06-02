@@ -1,24 +1,27 @@
-# Tambola_ticket
 <h1> Tambola ticket genaration Api </h1>
-
 
 # Usage
 
 ###  routes
-
+```
 POST /login 
 body:{username:'johndoe' , password}
 response:{message:'login success',token}
+```
 
+```
 POST /signup
 body:{username:'johndoe' , password}
 response:{message:'signup success', token}
+```
 
+```
 POST /ticket
 header:{'usertoken':token}
 body:{numberOfTickets:2}   //integer
 response:{ticketId:543253425}
-
+```
+```
 GET /ticket 
 header:{'usertoken':token}
 query:{page:1,limit:3}        //  /ticket?page=1&limit=3
@@ -39,3 +42,5 @@ response:[
 ]
     }
 ]
+
+```
