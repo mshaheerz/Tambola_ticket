@@ -7,7 +7,7 @@ const port = 3000;
 const server = http.createServer(async (req, res) => {
     const reqUrl = url.parse(req.url);
     const reqPath = reqUrl.pathname
-    res.writeHead(404, { 'Content-Type': 'application/json' });
+    
     // Handle end points
     if (reqPath === '/login' && req.method === 'POST') {
         await loginController(req, res);
@@ -25,6 +25,7 @@ const server = http.createServer(async (req, res) => {
         await fetchTicket(req, res);
     }else {
     // Return 404 for any other routes
+    res.writeHead(404, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ error: 'Not found' }));   
     }
 
